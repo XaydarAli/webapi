@@ -1,0 +1,69 @@
+ {% extends 'main/base.html' %}
+    {% load static %}
+    {% block content %}
+
+
+     
+        <!-- Team Start -->
+              <!--advisors start -->
+        <div class="container-fluid service pb-5">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Advisors</h4>
+                    <h1 class="display-5 mb-4">Bizning konsultantlar bilan tanishing</h1>
+                    <p class="mb-0">here we go
+                    </p>
+                </div>
+                <div class="row g-4">
+                    {%  for advisor in advisors %}
+                     <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="service-item">
+                                <div class="service-img">
+                                    <img src="{{ advisor.image }}" class="img-fluid rounded-top w-100" alt="Image">
+                                </div>
+                                <div class="rounded-bottom p-4">
+                                    <a href="#" class="h4 d-inline-block mb-4"> {{ advisor.name }}</a>
+                                    <p class="mb-4">{{ advisor.bio }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {%  endfor %}
+                </div>
+       
+        <!-- Team End -->
+            
+            
+            
+           <!--Authors start -->
+        <div class="container-fluid service pb-5">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Blog Authors</h4>
+                    <h1 class="display-5 mb-4">Bizning blog mualliflari bilan tanishing</h1>
+                    <p class="mb-0">here we go
+                    </p>
+                </div>
+                <div class="row g-4">
+                    {%  for author in authors %}
+                     <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="service-item">
+                                <div class="service-img">
+                                    <img src="{{ author.image }}" class="img-fluid rounded-top w-100" alt="Image">
+                                </div>
+                                <div class="rounded-bottom p-4">
+                                    <a href="#" class="h4 d-inline-block mb-4"> {{ author.nickname }}</a>
+                                    <p class="mb-4">{{ author.bio }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {%  endfor %}
+                </div>
+        </div>
+        </div>
+        </div>
+           
+
+    {% endblock %}
+</div>

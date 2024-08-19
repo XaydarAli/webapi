@@ -1,0 +1,215 @@
+    {% extends 'main/base.html' %}
+    {% load static %}
+    {% block content %}
+
+
+        <!-- Abvout Start -->
+        <div class="container-fluid about py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-xl-7 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div>
+                            <h4 class="text-primary">About Us</h4>
+                            <h1 class="display-5 mb-4">Meet our company unless miss the opportunity</h1>
+                            <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum velit temporibus repudiandae ipsa, eaque perspiciatis cumque incidunt tenetur sequi reiciendis.
+                            </p>
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                    <div class="d-flex">
+                                        <div><i class="fas fa-lightbulb fa-3x text-primary"></i></div>
+                                        <div class="ms-4">
+                                            <h4>Business Consuluting</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                    <div class="d-flex">
+                                        <div><i class="bi bi-bookmark-heart-fill fa-3x text-primary"></i></div>
+                                        <div class="ms-4">
+                                            <h4>Year Of Expertise</h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 flex-shrink-0">Discover Now</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="d-flex">
+                                        <i class="fas fa-phone-alt fa-2x text-primary me-4"></i>
+                                        <div>
+                                            <h4>Call Us</h4>
+                                            <p class="mb-0 fs-5" style="letter-spacing: 1px;">+01234567890</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="bg-primary rounded position-relative overflow-hidden">
+                            <img src="{% static 'img/about-2.png' %}" class="img-fluid rounded w-100" alt="">
+                            
+                            <div class="" style="position: absolute; top: -15px; right: -15px;">
+                                <img src="{% static 'img/about-3.png' %}" class="img-fluid" style="width: 150px; height: 150px; opacity: 0.7;" alt="">
+                            </div>
+                            <div class="" style="position: absolute; top: -20px; left: 10px; transform: rotate(90deg);">
+                                <img src="{% static 'img/about-4.png' %}" class="img-fluid" style="width: 100px; height: 150px; opacity: 0.9;" alt="">
+                            </div>
+                            <div class="rounded-bottom">
+                                <img src="{% static 'img/about-5.jpg' %}" class="img-fluid rounded-bottom w-100" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+        <!-- Services Start -->
+        <div class="container-fluid service pb-5">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Services</h4>
+                    <h1 class="display-5 mb-4">Bizning servislar bilan tanishing</h1>
+                    <p class="mb-0">here we go
+                    </p>
+                </div>
+                <div class="row g-4">
+                    {%  for service in services %}
+                     <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="service-item">
+                                <div class="service-img">
+                                    <img src="{{ service.image }}" class="img-fluid rounded-top w-100" alt="Image">
+                                </div>
+                                <div class="rounded-bottom p-4">
+                                    <a href="#" class="h4 d-inline-block mb-4"> {{ service.name }}</a>
+                                    <p class="mb-4">{{ service.description }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {%  endfor %}
+                </div>
+       
+
+        <!--Authors start -->
+        <div class="container-fluid service pb-5">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Blog Authors</h4>
+                    <h1 class="display-5 mb-4">Bizning blog mualliflari bilan tanishing</h1>
+                    <p class="mb-0">here we go
+                    </p>
+                </div>
+                <div class="row g-4">
+                    {%  for author in authors %}
+                     <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="service-item">
+                                <div class="service-img">
+                                    <img src="{{ author.image }}" class="img-fluid rounded-top w-100" alt="Image">
+                                </div>
+                                <div class="rounded-bottom p-4">
+                                    <a href="#" class="h4 d-inline-block mb-4"> {{ author.nickname }}</a>
+                                    <p class="mb-4">{{ author.bio }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {%  endfor %}
+                </div>
+       
+
+
+      
+        <!-- Blog Start -->
+      <div class="container-fluid blog pb-5">
+    <div class="container pb-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+            <h4 class="text-primary">Our Blog & News</h4>
+            <h1 class="display-5 mb-4">Articles For ALL the professionals</h1>
+            <p class="mb-0">Bloglarimiz siz uchun manfaatli bo'ladi degan umiddamiz</p>
+        </div>
+        <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.2s">
+            {% for blog in blogs %}
+                    <div class="blog-item p-4">
+                        <div class="blog-img mb-4">
+                            <img src="{{ blog.image }}" class="img-fluid w-100 rounded" alt="{{ blog.title }}">
+                        </div>
+                        <a href="" class="h4 d-inline-block mb-3">Blog title: {{ blog.title }}</a>
+                        <p class="mb-4">{{ blog.content }}</p>
+                        <div class="d-flex align-items-center">
+                            <img src="{{ blog.author.image }}" class="img-fluid rounded-circle" style="width: 60px; height: 60px;" alt="{{ blog.author.nickname }}">
+                            <div class="ms-3">
+                                <h5>{{ blog.author.nickname }}</h5>
+                                <p class="mb-0">{{ blog.created_at }}</p>
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+        <!-- Blog End -->
+
+
+   
+
+        <!-- Team Start -->
+              <!--advisors start -->
+        <div class="container-fluid service pb-5">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Advisors</h4>
+                    <h1 class="display-5 mb-4">Bizning konsultantlar bilan tanishing</h1>
+                    <p class="mb-0">here we go
+                    </p>
+                </div>
+                <div class="row g-4">
+                    {%  for advisor in advisors %}
+                     <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="service-item">
+                                <div class="service-img">
+                                    <img src="{{ advisor.image }}" class="img-fluid rounded-top w-100" alt="Image">
+                                </div>
+                                <div class="rounded-bottom p-4">
+                                    <a href="#" class="h4 d-inline-block mb-4"> {{ advisor.name }}</a>
+                                    <p class="mb-4">{{ advisor.bio }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {%  endfor %}
+                </div>
+       
+        <!-- Team End -->
+
+        <!-- Testimonial Start -->
+      <div class="container-fluid testimonial pb-5">
+    <div class="container pb-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+            <h4 class="text-primary">Testimonial</h4>
+            <h1 class="display-5 mb-4">Our Clients Reviews</h1>
+            <p class="mb-0">Bizning mijozlarning izohlari</p>
+        </div>
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
+            {% for review in reviews %}
+                <div class="testimonial-text">
+                    <p class="mb-0">Izoh: {{ review.comment }}</p>
+                    <p class="mb-0">Reyting: {{ review.rating }}⭐️</p>
+                    <p class="mb-0">Time: {{ review.created_at }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+        <!-- Testimonial End -->
+
+    {% endblock %}
+
+</div>
+</div>
+</div>

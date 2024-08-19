@@ -1,0 +1,95 @@
+ {% extends 'main/base.html' %}
+    {% load static %}
+    {% block content %}
+
+       
+        <!-- Services Start -->
+        <div class="container-fluid service pb-5">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Services</h4>
+                    <h1 class="display-5 mb-4">Bizning servislar bilan tanishing</h1>
+                    <p class="mb-0">here we go
+                    </p>
+                </div>
+                <div class="row g-4">
+                    {%  for service in services %}
+                     <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="service-item">
+                                <div class="service-img">
+                                    <img src="{{ service.image }}" class="img-fluid rounded-top w-100" alt="Image">
+                                </div>
+                                <div class="rounded-bottom p-4">
+                                    <a href="#" class="h4 d-inline-block mb-4"> Servis nomi:{{ service.name }}</a>
+                                    <p class="mb-4">Servis haqida batafsil:{{ service.description }}
+                                    </p>
+                                    <p class="mb-4">Servis narxi:{{ service.price}}$
+                                    </p>
+                                    
+                                     </p>
+                                    <p class="mb-4">Service advisor:{{ service.advisor}}
+                                    </p>
+                                    <p class="mb-4">Reviews count:{{ service.reviews_count}}
+                                    </p>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    {%  endfor %}
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+         <!-- Testimonial Start -->
+        <div class="container-fluid testimonial py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Testimonial</h4>
+                    <h1 class="display-5 mb-4">bizning mijozlarning izohlari</h1>
+                    <p class="mb-0">O'qing va xulosa chiqaring
+                    </p>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
+                    {%  for review in reviews %}
+                            <div class="testimonial-item">
+                                
+                                <div class="testimonial-quote-left">
+                                    <i class="fas fa-quote-left fa-2x"></i>
+                                </div>
+                               
+                                <div class="testimonial-text">
+                                    <p class="mb-0">Izoh :{{ review.service }}
+                                    </p>
+                                </div>
+                                <div class="testimonial-title">
+                                    <div>
+                                        <h4 class="mb-0"> reyting:{{ review.rating }}⭐️</h4>
+                                        <p class="mb-0">izoh:{{ review.comment }}.</p>
+                                        <p class="mb-0">izoh anonim shaxs tomonidan yozilgan</p>
+                                        <p class="mb-0"> yozilgan sana:{{ review.created_at }}</p>
+                                        <p class="mb-0">Likes:{{ review.likes}}</p>
+                                    </div>
+                                   
+                                </div>
+                                <div class="testimonial-quote-right">
+                                    <i class="fas fa-quote-right fa-2x"></i>
+                                </div>
+                            </div>
+                    {%  endfor %}
+                    
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+            
+
+    {% endblock %}

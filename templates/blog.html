@@ -1,0 +1,38 @@
+ {% extends 'main/base.html' %}
+    {% load static %}
+    {% block content %}
+
+
+        <div class="container-fluid blog pb-5">
+    <div class="container pb-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+            <h4 class="text-primary">Our Blog & News</h4>
+            <h1 class="display-5 mb-4">Articles For ALL the professionals</h1>
+            <p class="mb-0">Bloglarimiz siz uchun manfaatli bo'ladi degan umiddamiz</p>
+        </div>
+        <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.2s">
+            {% for blog in blogs %}
+                    <div class="blog-item p-4">
+                        <div class="blog-img mb-4">
+                            <img src="{{ blog.image }}" class="img-fluid w-100 rounded" alt="{{ blog.title }}">
+                        </div>
+                        <a href="" class="h4 d-inline-block mb-3">Blog title: {{ blog.title }}</a>
+                        <p class="mb-4">{{ blog.content }}</p>
+                        <div class="d-flex align-items-center">
+                            <img src="{{ blog.author.image }}" class="img-fluid rounded-circle" style="width: 60px; height: 60px;" alt="{{ blog.author.nickname }}">
+                            <div class="ms-3">
+                                <h5>Muallif nomi: {{ blog.author.nickname }}</h5>
+                                <p class="mb-0">post yozilgan vaqt:{{ blog.created_at }}</p>
+                                <p class="mb-0">post ko'rishlar soni:{{ blog.blog_views }} ta</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+        <!-- Blog End -->
+
+    {% endblock %}
